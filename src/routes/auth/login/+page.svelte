@@ -6,8 +6,7 @@
 		email: '',
 		password: ''
 	};
-	$: console.log($users);
-	console.log(get(users.email), '<-- login route');
+
 	function handleSubmit() {
 		let confirmLogin = loginCredentials;
 		if (confirmLogin == get(users)) {
@@ -15,10 +14,6 @@
 		} else {
 			console.log('no work, sorry');
 		}
-		console.log($users);
-		// if (email !== $users.email && password !== $users.password) {
-		// 	alert('try again');
-		// }
 	}
 </script>
 
