@@ -1,11 +1,24 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { users } from '$lib/stores/users';
+	import { get } from 'svelte/store';
 	let loginCredentials = {
 		email: '',
 		password: ''
 	};
+	$: console.log($users);
+	console.log(get(users.email), '<-- login route');
 	function handleSubmit() {
-		console.log(loginCredentials);
+		let confirmLogin = loginCredentials;
+		if (confirmLogin == get(users)) {
+			console.log('hello world');
+		} else {
+			console.log('no work, sorry');
+		}
+		console.log($users);
+		// if (email !== $users.email && password !== $users.password) {
+		// 	alert('try again');
+		// }
 	}
 </script>
 
