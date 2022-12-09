@@ -5,7 +5,7 @@ export async function load() {
 		`https://api.spoonacular.com/food/products/search?query=pizza`,
 		{
 			headers: {
-				'x-api-key': `${SPOONACULAR_KEY}`
+				'x-api-key': `${SPOONACULAR_KEY || process.env.SPOONACULAR_KEY}`
 			}
 		}
 	);
