@@ -1,6 +1,7 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { users } from '$lib/stores/users';
+	import Header from '$lib/components/Header.svelte';
 	let signUpCredentials = {
 		email: '',
 		password: '',
@@ -16,6 +17,7 @@
 	}
 </script>
 
+<Header />
 <div class="card flex justify-center items-center">
 	<form
 		class="bg-green-600 p-5 rounded-md

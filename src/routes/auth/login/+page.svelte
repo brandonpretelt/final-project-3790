@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { users } from '$lib/stores/users';
 	import { get } from 'svelte/store';
+	import Header from '$lib/components/Header.svelte';
 	let loginCredentials = {
 		email: '',
 		password: ''
@@ -17,6 +18,7 @@
 	}
 </script>
 
+<Header />
 <form action="/auth?/login" method="POST" use:enhance={handleSubmit}>
 	<div>
 		<label for="email"> Enter Email: </label>

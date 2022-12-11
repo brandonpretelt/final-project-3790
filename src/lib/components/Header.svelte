@@ -1,35 +1,52 @@
+<script>
+	import { browser } from '$app/environment';
+	let PATH;
+	$: if (browser) {
+		PATH = window.location.pathname;
+		console.log(PATH);
+	}
+</script>
+
 <div class="navbar bg-green-500">
 	<div class="flex-1">
 		<!-- svelte-ignore a11y-missing-attribute -->
-		<a class="btn btn-ghost normal-case text-xl">InstaFood</a>
+		<a href="/" class="btn btn-ghost normal-case text-xl">InstaFood</a>
 	</div>
 	<div class="flex-none gap-2">
 		<div class="dropdown dropdown-end">
 			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<!-- svelte-ignore a11y-label-has-associated-control -->
-			<label tabindex="0" class="btn btn-ghost btn-circle avatar">
-				<div class="w-10 rounded-full">
+			{#if PATH === '/auth/signup' || PATH === '/auth/login'}
+				{#if PATH === '/auth/signup'}
+					<a href="/auth/login" class="link btn btn-outline">Login</a>
+				{:else}
+					<a href="/auth/signup" class="link btn btn-outline">Sign Up</a>
+				{/if}
+			{:else}
+				<label tabindex="0" class="btn btn-ghost btn-circle avatar">
+					<div class="w-10 rounded-full">
+						<!-- svelte-ignore a11y-missing-attribute -->
+						<img src="https://placeimg.com/80/80/people" />
+					</div>
+				</label>
+				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+				<ul
+					tabindex="0"
+					class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+				>
+					<li>
+						<!-- svelte-ignore a11y-missing-attribute -->
+						<a href="/profile" class="justify-between">
+							Profile
+							<!-- <span class="badge">New</span> -->
+						</a>
+					</li>
 					<!-- svelte-ignore a11y-missing-attribute -->
-					<img src="https://placeimg.com/80/80/people" />
-				</div>
-			</label>
-			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-			<ul
-				tabindex="0"
-				class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-			>
-				<li>
+					<li><a href="/settingsRoute">Settings</a></li>
 					<!-- svelte-ignore a11y-missing-attribute -->
-					<a class="justify-between">
-						Profile
-						<span class="badge">New</span>
-					</a>
-				</li>
-				<!-- svelte-ignore a11y-missing-attribute -->
-				<li><a>Settings</a></li>
-				<!-- svelte-ignore a11y-missing-attribute -->
-				<li><a>Logout</a></li>
-			</ul>
+					<li><a href="/auth/login">Logout</a></li>
+				</ul>
+			{/if}
 		</div>
 	</div>
 </div>
