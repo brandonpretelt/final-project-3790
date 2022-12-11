@@ -4,7 +4,7 @@
 [Github Link](https://github.com/brandonpretelt/final-project-3790)
 
 - [ ] Svelte Conditional Logic
-- [ ]JavaScript Array methods
+- [ ] JavaScript Array methods
 - [ ] Click Events
 - [ ] Form Validation and Input
 - [ ] 2 examples of LifeCycle Functions and Writable Stores
