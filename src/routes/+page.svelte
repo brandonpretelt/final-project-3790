@@ -1,6 +1,6 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
-	import Test from '$lib/components/Test.svelte';
+	import ProductCard from '$lib/components/ProductCard.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	export let data;
 	/* let fakeData = {
@@ -23,5 +23,5 @@
 		</div>
 	</div>
 </div>
-<Test {data} />
+<ProductCard {data} />
 <Footer />
