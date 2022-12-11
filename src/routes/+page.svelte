@@ -3,7 +3,14 @@
 	import Test from '$lib/components/Test.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	export let data;
-	// console.log(data.products);
+	/* let fakeData = {
+		products: [
+			{
+				title: 'Hi people',
+				image: 'https://spoonacular.com/productImages/192386-312x231.jpeg'
+			}
+		]
+	}; */
 </script>
 
 <Header />

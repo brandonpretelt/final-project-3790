@@ -12,8 +12,11 @@
 		if (password !== confirmPassword) {
 			alert('try again');
 		}
-		$users = signUpCredentials;
-		console.log($users);
+
+		return async ({ update }) => {
+			$users = signUpCredentials;
+			update();
+		};
 	}
 </script>
 

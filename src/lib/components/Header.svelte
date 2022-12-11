@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
+	import { users } from '$lib/stores/users';
 	let PATH;
 	$: if (browser) {
 		PATH = window.location.pathname;
@@ -37,12 +38,16 @@
 					<li>
 						<!-- svelte-ignore a11y-missing-attribute -->
 						<a href="/profile" class="justify-between">
-							Profile
+							{#if $users}
+								{$users.email}
+							{:else}
+								<span>Hi stranger</span>
+							{/if}
 							<!-- <span class="badge">New</span> -->
 						</a>
 					</li>
 					<!-- svelte-ignore a11y-missing-attribute -->
-					<li><a href="/settingsRoute">Settings</a></li>
+					<li><a href="/orders">Orders</a></li>
 					<!-- svelte-ignore a11y-missing-attribute -->
 					<li><a href="/auth/login">Logout</a></li>
 				</ul>

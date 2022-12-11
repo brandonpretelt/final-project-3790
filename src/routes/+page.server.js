@@ -10,6 +10,6 @@ export async function load() {
 		}
 	);
 	const meals_data = await meals_response.json();
-	console.log(meals_data);
+	// console.log(meals_data);
 	return meals_data;
 }

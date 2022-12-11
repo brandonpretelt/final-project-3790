@@ -1,24 +1,26 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { users } from '$lib/stores/users';
-	import { get } from 'svelte/store';
+	import { goto } from '$app/navigation';
 	import Header from '$lib/components/Header.svelte';
+
 	let loginCredentials = {
 		email: '',
 		password: ''
 	};
 
 	function handleSubmit() {
-		let confirmLogin = loginCredentials;
-		if (confirmLogin == get(users)) {
-			console.log('hello world');
+		if ($users.email === loginCredentials.email && $users.password === loginCredentials.password) {
+			alert("you're good to go");
 		} else {
-			console.log('no work, sorry');
+			alert('try again');
+			setTimeout(() => goto('/auth/login'), 40);
 		}
 	}
 </script>
 
 <Header />
+{$users.email}
 <form action="/auth?/login" method="POST" use:enhance={handleSubmit}>
 	<div>
 		<label for="email"> Enter Email: </label>
