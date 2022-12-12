@@ -11,7 +11,7 @@
 - [ ] JavaScript Array methods
 - [ ] Click Events
 - [ ] Form Validation and Input
-- [ ] 2 examples of LifeCycle Functions and Writable Stores 
+- [ ] 2 examples of LifeCycle Functions
 - [ ] 3 API loaded using a mix of SvelteKit functions
 
 ## FINISHED
@@ -19,5 +19,7 @@
     [Routes](https://github.com/brandonpretelt/final-project-3790/tree/main/src/routes)
 - [x] Writable store 1 
     [Writable Store for login/signup](https://github.com/brandonpretelt/final-project-3790/blob/main/src/lib/stores/users.js)
+- [x] Writable store 2
+    [Writable store for cart feature](https://github.com/brandonpretelt/final-project-3790/tree/main/src/lib/stores)
 - [x] At least 3 Components 
     [Components](https://github.com/brandonpretelt/final-project-3790/tree/main/src/lib/components)
