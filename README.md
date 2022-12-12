@@ -10,7 +10,6 @@
 - [ ] CSS animations and transitions
 - [ ] JavaScript Array methods
 - [ ] Click Events
-- [ ] Form Validation and Input
 - [ ] 2 examples of LifeCycle Functions
 - [ ] 3 API loaded using a mix of SvelteKit functions
 
@@ -24,3 +23,4 @@
     [Writable store for cart feature](https://github.com/brandonpretelt/final-project-3790/tree/main/src/lib/stores)
 - [x] At least 3 Components 
     [Components](https://github.com/brandonpretelt/final-project-3790/tree/main/src/lib/components)
+- [x] Form Validation and Input
