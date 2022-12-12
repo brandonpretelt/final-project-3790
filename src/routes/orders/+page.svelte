@@ -3,4 +3,6 @@
 </script>
 
 <Header title={'GroceryGo'} />
-<h2>Your Recent Orders</h2>
+<div class="bg-orange-200">
+	<h2>Your Recent Orders</h2>
+</div>

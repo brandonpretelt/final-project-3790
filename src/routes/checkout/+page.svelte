@@ -5,7 +5,7 @@
 </script>
 
 <Header title={'GroceryGo'} />
-<div>This is the checkout page!</div>
+<div class="bg-orange-200">This is the checkout page!</div>
 
 {#if $cartStore}
 	{$cartStore.title}

@@ -22,7 +22,7 @@
 </script>
 
 <Header title={'GroceryGo'} />
-<div class="card flex justify-center items-center">
+<div class="card bg-orange-200 flex justify-center items-center">
 	<form
 		class="p-5 rounded-md
         m-10"
