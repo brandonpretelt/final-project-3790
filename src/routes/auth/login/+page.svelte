@@ -19,7 +19,7 @@
 	}
 </script>
 
-<Header />
+<Header title={'GroceryGo'} />
 {$users.email}
 <form action="/auth?/login" method="POST" use:enhance={handleSubmit}>
 	<div>

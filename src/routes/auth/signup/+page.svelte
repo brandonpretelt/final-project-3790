@@ -20,7 +20,7 @@
 	}
 </script>
 
-<Header />
+<Header title={'GroceryGo'} />
 <div class="card flex justify-center items-center">
 	<form
 		class="bg-green-600 p-5 rounded-md
