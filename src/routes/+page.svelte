@@ -25,7 +25,7 @@
 
 <Header title={'GroceryGo'} />
 
-<div class="hero min-h-screen bg-base-200" class:min-h-screen={!$users.email}>
+<div class="hero min-h-screen bg-orange-200" class:min-h-screen={!$users.email}>
 	<div class="hero-content text-center">
 		<div class="max-w-md">
 			{#if !$users.email}

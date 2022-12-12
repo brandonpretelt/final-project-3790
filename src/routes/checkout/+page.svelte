@@ -1,6 +1,13 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
+	import { cartStore } from '$lib/stores/cartStore';
+	console.log($cartStore.title);
 </script>
 
-<Header />
+<Header title={'GroceryGo'} />
 <div>This is the checkout page!</div>
+
+{#if $cartStore}
+	{$cartStore.title}
+	{$cartStore.price}
+{/if}

@@ -1,8 +1,8 @@
 <script>
-	import { cartStore } from '$lib/stores/cartStore';
-	export let items = [];
+	// 	export let details;
 	export let hidden;
 	hidden = !false;
+	export let items = [];
 	/* 	let cartItems = {
 		title,
 		price	}
@@ -22,11 +22,9 @@
 			</div>
 		{:else}
 			<ul class="menu w-56 rounded-box">
-				{#each items as item}
-					<li class="rounded-md">
-						<div>${item.price} - {item.title}</div>
-					</li>
-				{/each}
+				<li class="rounded-md">
+					<div>${item.price} - {item.title}</div>
+				</li>
 			</ul>
 			<a href="/checkout" on:click={() => (hidden = !hidden)} class="btn">Go to Checkout</a>
 		{/if}

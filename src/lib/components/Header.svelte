@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import { users } from '$lib/stores/users';
 	import Cart from './Cart.svelte';
+
 	export let title;
 	export let hidden;
 	function show() {
@@ -10,14 +11,19 @@
 		hidden = !hidden;
 	}
 
+	// for photos from unsplash get random photos and then use map to create a new photos object with the following
+	// properties: query, orientation, count, content_filter
+	// and then filter by content_filter to only get a high content filter
+
+	// for prices, map new object with updated price property --> if price 0 then custom_price (between 0 and 100), else use provided price data.price
+
 	let PATH;
 	$: if (browser) {
 		PATH = window.location.pathname;
-		console.log(PATH);
 	}
 </script>
 
-<div class="navbar bg-orange-300">
+<div class="navbar bg-orange-200">
 	<div class="flex-1">
 		<!-- svelte-ignore a11y-missing-attribute -->
 		<a href="/" class="btn btn-ghost normal-case text-xl">{title}</a>

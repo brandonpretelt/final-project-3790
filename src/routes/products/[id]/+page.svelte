@@ -1,7 +1,21 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
+	import { cartStore } from '$lib/stores/cartStore';
 	export let data;
-	$: console.log(data);
+	console.log(data.title, data.price, data.id);
+	let cartDetails = {
+		title: 'potato',
+		price: '$100',
+		id: 23
+	};
+	console.log(cartDetails);
+	function addToCart() {
+		return async ({ update }) => {
+			$cartStore = cartDetails;
+			console.log($cartStore);
+			update();
+		};
+	}
 </script>
 
 <Header title={'GroceryGo'} />
@@ -21,7 +35,7 @@
 			{/if}
 
 			<p class="card card-body w-3/4 text-neutral">{@html data.generatedText}</p>
-			<button class="btn btn-primary">Add to cart</button>
+			<button on:click={addToCart} class="btn btn-primary">Add to cart</button>
 		</div>
 	</div>
 </div>
