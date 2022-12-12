@@ -6,7 +6,7 @@ import { browser } from '$app/environment';
 // a profile picture along with profile options, else
 // it will display a login button.
 
-const defaultValue = { email: '', password: '', confirmPassword: '' };
+const defaultValue = { username: '', email: '', password: '', confirmPassword: '' };
 
 const initialValue = browser ? window.localStorage.getItem('user') : defaultValue;
 

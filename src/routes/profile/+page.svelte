@@ -4,8 +4,8 @@
 </script>
 
 <Header title={'GroceryGo'} />
-{#if $users.email}
-	{$users.email}
+{#if $users.username}
+	{$users.username}
 {:else}
 	<span>Hi ya</span>
 {/if}

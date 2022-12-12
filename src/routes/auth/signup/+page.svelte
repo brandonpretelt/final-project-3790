@@ -3,6 +3,7 @@
 	import { users } from '$lib/stores/users';
 	import Header from '$lib/components/Header.svelte';
 	let signUpCredentials = {
+		username: '',
 		email: '',
 		password: '',
 		confirmPassword: ''
@@ -23,13 +24,23 @@
 <Header title={'GroceryGo'} />
 <div class="card flex justify-center items-center">
 	<form
-		class="bg-green-600 p-5 rounded-md
+		class="p-5 rounded-md
         m-10"
 		action="/auth?/signup"
 		method="POST"
 		use:enhance={handleSignup}
 	>
 		<h3 class="text-2xl font-bold text-center mb-2">Sign Up</h3>
+		<div class="form-control">
+			<label for="username" class="text-xl font-bold"> Enter Username: </label>
+			<input
+				class="input input-bordered mb-4"
+				type="text"
+				placeholder="username"
+				name="username"
+				bind:value={signUpCredentials.username}
+			/>
+		</div>
 		<div class="form-control">
 			<label for="email" class="text-xl font-bold"> Enter Email: </label>
 			<input
@@ -61,7 +72,7 @@
 			/>
 		</div>
 		<div class="mx-auto text-center">
-			<button class="btn btn-secondary w-full">
+			<button class="btn btn-primary w-full">
 				<span class="text-white font-bold">Sign Up!</span>
 			</button>
 		</div>

@@ -1,10 +1,20 @@
 <script>
-	export let items = [{ title: 'Apple', price: 2.99 }];
+	import { cartStore } from '$lib/stores/cartStore';
+	export let items = [];
 	export let hidden;
 	hidden = !false;
+	/* 	let cartItems = {
+		title,
+		price	}
+	function handleSignup() {
+		return async ({ update }) => {
+			$cartStore = signUpCredentials;
+			update();
+		};
+	} */
 </script>
 
-<div class="card absolute right-1 top-20 bg-slate-900 hidden" class:hidden>
+<div class="card absolute right-1 top-20 bg-slate-900 hidden z-10" class:hidden>
 	<div class="card-content  text-white rounded-md p-3 flex flex-col justify-center items-center">
 		{#if items.length === 0}
 			<div class="p-4">
