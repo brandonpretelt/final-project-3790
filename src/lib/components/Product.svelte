@@ -2,7 +2,6 @@
 	import { cartStore } from '$lib/stores/cartStore';
 
 	export let data;
-	console.log($cartStore);
 </script>
 
 {#if data}
@@ -18,12 +17,12 @@
 	{/if}
 
 	<p class="card card-body w-3/4 text-neutral">{@html data.generatedText}</p>
-{:else}
+	<!-- {:else}
 	{#each [$cartStore] as item}
 		{#if item}
-			<span>{item.title}</span>
+			<span>{item.title} - {item.price}</span>
 		{:else}
 			<div>No items</div>
 		{/if}
-	{/each}
+	{/each} -->
 {/if}

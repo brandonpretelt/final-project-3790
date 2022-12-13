@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 
 export const actions = {
-	login: async ({ request }) => {
+	login: async ({ request, fetch }) => {
 		const data = await request.formData();
 		const email = data.get('email');
 		const password = data.get('password');
@@ -10,7 +10,7 @@ export const actions = {
 		throw redirect(303, '/');
 		// browser ? window.localStorage.getItem('user')
 	},
-	signup: async ({ request }) => {
+	signup: async ({ request, fetch }) => {
 		const data = await request.formData();
 		const password = data.get('password');
 		const confirmPassword = data.get('confirmPassword');

@@ -1,6 +1,8 @@
 <script>
 	import { browser } from '$app/environment';
 	import { users } from '$lib/stores/users';
+	import { cartStore } from '$lib/stores/cartStore';
+
 	import Cart from './Cart.svelte';
 
 	export let title;
@@ -9,6 +11,10 @@
 		if (hidden === false) hidden;
 
 		hidden = !hidden;
+	}
+
+	function clearStore() {
+		$cartStore = {};
 	}
 
 	// for photos from unsplash get random photos and then use map to create a new photos object with the following
@@ -79,7 +85,7 @@
 					<!-- svelte-ignore a11y-missing-attribute -->
 					<li><a href="/orders">Orders</a></li>
 					<!-- svelte-ignore a11y-missing-attribute -->
-					<li><a href="/auth/login">Logout</a></li>
+					<li><a href="/auth/login" on:click={clearStore}>Logout</a></li>
 				</ul>
 			{/if}
 		</div>
