@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-const defaultValue = { title: '', price: '', id: '' };
+const defaultValue = { title: 'Apple', price: 0.58, id: 1 };
 
 const initialValue = browser ? window.localStorage.getItem('item') : defaultValue;
 

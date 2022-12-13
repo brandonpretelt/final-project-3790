@@ -13,7 +13,7 @@
 				<div class="text-white text-center p-3">{title}</div>
 				<div class="flex justify-center m-3">
 					<a href={`../products/${id}`} class="box btn bg-orange-400 mb-3">
-						<div>Quick Buy</div>
+						<div>View Details</div>
 					</a>
 				</div>
 			</div>
