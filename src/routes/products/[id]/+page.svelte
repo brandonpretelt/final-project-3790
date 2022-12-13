@@ -7,7 +7,7 @@
 	let items = { title: data.title, price: data.price, id: data.id, image: data.image };
 
 	let addToCart = () => {
-		$cartStore = items;
+		$cartStore = [...$cartStore, items];
 		setContext('cartProducts', $cartStore);
 	};
 </script>

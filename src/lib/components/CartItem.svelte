@@ -1,12 +1,14 @@
 <script>
+	import { cartStore } from '$lib/stores/cartStore';
 	export let title, price;
+	console.log($cartStore.length);
 </script>
 
 <section class="flex flex-col">
-	{#if title === undefined && price === undefined}
-		<div>Cart is empty</div>
+	{#if $cartStore.length > 0}
+		<h1 class="font-bold">{title ? title : ''}</h1>
+		<div class="font-bold text-left">{price ? price : ''}</div>
 	{:else}
-		<h1 class="font-bold">{title}</h1>
-		<div class="font-bold text-left">${price}</div>
+		<div>Empty</div>
 	{/if}
 </section>
