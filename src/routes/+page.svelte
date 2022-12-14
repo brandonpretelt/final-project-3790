@@ -3,18 +3,20 @@
 	import { users } from '$lib/stores/users';
 	import { enhance } from '$app/forms';
 	import { goto } from '$app/navigation';
-	import { setContext } from 'svelte';
+	// import { setContext } from 'svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	export let data;
-
-	setContext('profilephoto', data);
-
+	// setContext('photodata', data);
 	function navigate() {
 		goto('/products');
 	}
+
+	// 2 CSS animations
+	// 1 more api
+	// 1 more lifecycle function
 </script>
 
-<Header title={'GroceryGo'} />
+<Header title={'GroceryGo'} photoData={data} />
 
 <div class="hero min-h-screen bg-orange-200">
 	<div class="text-center">

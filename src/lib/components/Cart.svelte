@@ -2,7 +2,6 @@
 	// import Product from './Product.svelte';
 	import CartItem from './CartItem.svelte';
 	import { cartStore } from '$lib/stores/cartStore';
-
 	export let hidden;
 	hidden = !false;
 	// const getUL = document.querySelector('ul');

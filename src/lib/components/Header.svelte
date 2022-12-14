@@ -3,14 +3,18 @@
 	import { users } from '$lib/stores/users';
 	import { cartStore } from '$lib/stores/cartStore';
 	import { getContext } from 'svelte';
+
 	import Cart from './Cart.svelte';
 
 	export let title;
 	export let hidden;
+	export let photoData;
+	let randomProfilePhoto;
 
-	console.log(getContext('profilephoto'));
-	let getRandomProfilePhoto = getContext('profilephoto')[0];
-	$: randomProfilePhoto = getRandomProfilePhoto.urls.regular;
+	if (photoData) {
+		randomProfilePhoto = photoData[0];
+	}
+	console.log(randomProfilePhoto);
 	function show() {
 		if (hidden === false) hidden;
 
@@ -63,7 +67,13 @@
 				<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 					<div class="w-10 rounded-full">
 						<!-- svelte-ignore a11y-missing-attribute -->
-						<img src={randomProfilePhoto} />
+						<!-- avatar section -->
+						<!-- <img
+							src={photoData
+								? randomProfilePhoto.urls.regular
+								: 'https://img.icons8.com/small/96/null/shopping-bag.png'}
+						/> -->
+						<img src="https://img.icons8.com/small/96/null/shopping-bag.png" />
 					</div>
 				</label>
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->

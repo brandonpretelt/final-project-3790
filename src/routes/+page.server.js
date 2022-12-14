@@ -1,4 +1,4 @@
-import { UNSPLASH_ACCESS_KEY, UNSPLASH_SECRET_KEY } from '$env/static/private';
+import { UNSPLASH_ACCESS_KEY } from '$env/static/private';
 
 // url = /random/?query=groceries&content_filter=high&orientation=landscape&count=1
 const URL = `https://api.unsplash.com/photos`;
