@@ -9,8 +9,8 @@
 	export let hidden;
 
 	console.log(getContext('profilephoto'));
-	let getRandomProfilePhoto = getContext('profilephoto');
-	$: randomProfilePhoto = getRandomProfilePhoto[0].urls.regular;
+	let getRandomProfilePhoto = getContext('profilephoto')[0];
+	$: randomProfilePhoto = getRandomProfilePhoto.urls.regular;
 	function show() {
 		if (hidden === false) hidden;
 
