@@ -3,31 +3,23 @@
 	import { users } from '$lib/stores/users';
 	import { enhance } from '$app/forms';
 	import { goto } from '$app/navigation';
-	import ProductCard from '$lib/components/ProductCard.svelte';
+	import { setContext } from 'svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	export let data;
 
-	// export let data, form;
-	// let products = data.products;
+	setContext('profilephoto', data);
 
 	function navigate() {
 		goto('/products');
 	}
-
-	let fakeData = {
-		products: [
-			{
-				title: 'Hi people',
-				image: 'https://spoonacular.com/productImages/192386-312x231.jpeg'
-			}
-		]
-	};
 </script>
 
 <Header title={'GroceryGo'} />
 
-<div class="hero min-h-screen bg-orange-200" class:min-h-screen={!$users.email}>
-	<div class="hero-content text-center">
-		<div class="max-w-md">
+<div class="hero min-h-screen bg-orange-200">
+	<div class="text-center">
+		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+		<div class="max-w p-10 m-5 rounded-lg bg-orange-100">
 			{#if !$users.email}
 				<h1 class="text-5xl font-bold">GroceryGo</h1>
 				<h2 class="text-3xl">Get your groceries fast and fresh with GroceryGo.</h2>
@@ -55,5 +47,4 @@
 		</div>
 	</div>
 </div>
-<!-- <ProductCard {fakeData} /> -->
 <Footer />

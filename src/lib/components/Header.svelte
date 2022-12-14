@@ -2,11 +2,15 @@
 	import { browser } from '$app/environment';
 	import { users } from '$lib/stores/users';
 	import { cartStore } from '$lib/stores/cartStore';
-
+	import { getContext } from 'svelte';
 	import Cart from './Cart.svelte';
 
 	export let title;
 	export let hidden;
+
+	console.log(getContext('profilephoto'));
+	let getRandomProfilePhoto = getContext('profilephoto');
+	$: randomProfilePhoto = getRandomProfilePhoto[0].urls.regular;
 	function show() {
 		if (hidden === false) hidden;
 
@@ -17,7 +21,7 @@
 		$cartStore = {};
 	}
 
-	// for photos from unsplash get random photos and then use map to create a new photos object with the following
+	// TODO:  for photos from unsplash get random photos and then use map to create a new photos object with the following
 	// properties: query, orientation, count, content_filter
 	// and then filter by content_filter to only get a high content filter
 
@@ -48,22 +52,18 @@
 		{/if}
 		<div class="dropdown dropdown-end">
 			{#if PATH === '/auth/signup' || PATH === '/auth/login'}
-				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-				<!-- svelte-ignore a11y-label-has-associated-control -->
 				{#if PATH === '/auth/signup'}
 					<a href="/auth/login" class="link btn btn-outline">Login</a>
 				{:else}
 					<a href="/auth/signup" class="link btn btn-outline">Sign Up</a>
 				{/if}
 			{:else}
-				<!-- svelte-ignore a11y-missing-attribute -->
-
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 				<!-- svelte-ignore a11y-label-has-associated-control -->
 				<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 					<div class="w-10 rounded-full">
 						<!-- svelte-ignore a11y-missing-attribute -->
-						<img src="https://placeimg.com/80/80/people" />
+						<img src={randomProfilePhoto} />
 					</div>
 				</label>
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -72,20 +72,16 @@
 					class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
 				>
 					<li>
-						<!-- svelte-ignore a11y-missing-attribute -->
 						<a href="/profile" class="justify-between">
 							{#if $users}
 								{$users.username}
 							{:else}
 								<span>Hi stranger</span>
 							{/if}
-							<!-- <span class="badge">New</span> -->
 						</a>
 					</li>
-					<!-- svelte-ignore a11y-missing-attribute -->
 					<li><a href="/orders">Orders</a></li>
-					<!-- svelte-ignore a11y-missing-attribute -->
-					<li><a href="/auth/login" on:click={clearStore}>Logout</a></li>
+					<li><a href="/auth/login">Logout</a></li>
 				</ul>
 			{/if}
 		</div>

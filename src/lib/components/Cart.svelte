@@ -5,13 +5,9 @@
 
 	export let hidden;
 	hidden = !false;
-	/* 	let currentCartItems;
-	if (getContext('cartProducts') !== undefined) {
-		currentCartItems = [getContext('cartProducts'), $cartStore];
-	}
-	let items = [];
-	items = [$cartStore, ...items];
-	// items.push($cartStore); */
+	// const getUL = document.querySelector('ul');
+	// console.log(getUL.firstChild);
+	// console.log(get(cartStore));
 </script>
 
 <div class="card absolute right-1 top-20 bg-slate-900 hidden z-10" class:hidden>
@@ -23,7 +19,7 @@
 				</li>
 			{/each}
 		</ul>
-		<button on:click={() => console.log('bleh')}>Test</button>
+
 		<a href="/checkout" on:click={() => (hidden = !hidden)} class="btn">Go to Checkout</a>
 	</div>
 </div>

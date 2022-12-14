@@ -5,10 +5,8 @@
 </script>
 
 <section class="flex flex-col">
-	{#if $cartStore.length > 0}
-		<h1 class="font-bold">{title ? title : ''}</h1>
-		<div class="font-bold text-left">{price ? price : ''}</div>
-	{:else}
-		<div>Empty</div>
+	{#if $cartStore.length > 0 && title !== undefined}
+		<h1 class="font-bold">{title}</h1>
+		<div class="font-bold text-left">${price ? price : Math.floor(Math.random() * 10)}</div>
 	{/if}
 </section>
