@@ -9,7 +9,7 @@
 - [ ] 1 example of LifeCycle Functions
 - [ ] Click Events
 - [ ] CSS animations
-- [ ] 2 API loaded using a mix of SvelteKit functions
+- [ ] 1 API loaded using a mix of SvelteKit functions
 - [ ] JavaScript Array methods
 
 ## FINISHED
