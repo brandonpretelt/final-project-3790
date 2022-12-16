@@ -12,7 +12,7 @@
 		<h2>Your Recent Orders</h2>
 
 		{#each $cartStore as item}
-			{item.title}
+			{item ? item.title : ''}
 		{/each}
 	</div>
 </section>
