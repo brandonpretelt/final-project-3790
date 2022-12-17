@@ -40,6 +40,7 @@
 					placeholder="username"
 					name="username"
 					bind:value={signUpCredentials.username}
+					required
 				/>
 			</div>
 			<div class="form-control">
@@ -49,6 +50,7 @@
 					type="email"
 					placeholder="email"
 					name="email"
+					required
 					bind:value={signUpCredentials.email}
 				/>
 			</div>
@@ -59,6 +61,7 @@
 					type="password"
 					placeholder="enter password"
 					name="password"
+					required
 					bind:value={signUpCredentials.password}
 				/>
 			</div>
