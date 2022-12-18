@@ -8,15 +8,14 @@
 
 - [ ] 1 example of LifeCycle Functions
 - [ ] Click Events
-- [ ] CSS animations
-- [ ] 1 API loaded using a mix of SvelteKit functions
+- [ ] Need 1 more API loaded using a mix of SvelteKit functions
 - [ ] JavaScript Array methods
 
 ## FINISHED
 
 - [x] onMount is here
 
-- [x] CSS transitions (fade and fly)
+- [x] CSS transitions
 
 - [x] Svelte Conditional Logic
       Basically, the whole file, I think. Lots of if and each statements
@@ -31,3 +30,27 @@
 - [x] At least 3 Components
       [Components](https://github.com/brandonpretelt/final-project-3790/tree/main/src/lib/components)
 - [x] Form Validation and Input
+
+### /
+
+This root route displays the main page with a sign up button that links to a signup or login route. It uses localstorage to save the logged in / logged out state. The main routed, when logged in, displays the search bar so that you can serach for products. It also displays the profile photo and menu and shopping cart when logged in.
+
+### /auth/signup.svelte
+
+This route has the signup form. It uses the HTML5 required attributes for validation and redirects to login after signup.
+
+### /auth/login.svelte
+
+This route has a login form. It also uses HTML5 required attributes for valdiation and redirects back to the main route but, because of local storage, remembers that the user is logged in.
+
+### /profile
+
+The profile route displays your recent orders.
+
+### /orders
+
+You reach this route by clicking on the Orders link in the profile menu. It,
+
+### /checkout
+
+This route has a list of everything that was in your cart, along with a photo of it and the price.
