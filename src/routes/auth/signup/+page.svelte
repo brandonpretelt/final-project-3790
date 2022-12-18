@@ -1,6 +1,7 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { users } from '$lib/stores/users';
+	import { fly } from 'svelte/transition';
 	import Header from '$lib/components/Header.svelte';
 	let signUpCredentials = {
 		username: '',
@@ -22,7 +23,7 @@
 </script>
 
 <Header title={'GroceryGo'} />
-<section class="hero min-h-screen bg-orange-200">
+<section class="hero min-h-screen bg-orange-200" in:fly={{ y: -20 }}>
 	<div class="card bg-orange-200 flex justify-center items-center">
 		<form
 			class="p-5 
@@ -72,6 +73,7 @@
 					type="password"
 					placeholder="confirm password"
 					name="confirmPassword"
+					required
 					bind:value={signUpCredentials.confirmPassword}
 				/>
 			</div>

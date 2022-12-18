@@ -11,9 +11,9 @@
 	}
 </script>
 
-<section class="min-h-screen bg-orange-200 grid grid-cols-2">
+<section class="max-h-screen bg-slate-100 grid grid-cols-2 rounded-md p-5 place-items-center">
 	<div>
-		<figure>
+		<figure class="w-screen">
 			<img src={data.image} alt={data.title} />
 		</figure>
 	</div>

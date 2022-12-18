@@ -3,13 +3,16 @@
 	import Product from '$lib/components/Product.svelte';
 	import { cartStore } from '$lib/stores/cartStore';
 	import { fly } from 'svelte/transition';
+
 	export let data;
 	let visible = false;
+	console.log(data);
 	let items = { title: data.title, price: data.price, id: data.id, image: data.image };
 
 	let addToCart = () => {
-		if (items.length > 0 || items !== undefined || items !== null) {
-			$cartStore = [...$cartStore, items];
+		if (items.length > 0 || items !== undefined || (items !== null && items.title !== '')) {
+			$cartStore = [items, ...$cartStore];
+			console.log(items);
 		}
 		visible = true;
 		setTimeout(() => {
@@ -34,8 +37,8 @@
 	</div>
 	<div class="card flex justify-center">
 		<div class="card-content flex flex-col items-center">
-			<div class="flex flex-col items-center p-5">
-				<div class="ml-auto mb-8">
+			<div class="flex flex-col items-center p-5 ">
+				<div class="ml-auto mb-8 ">
 					<button on:click={addToCart} class="btn btn-primary justify-self-end">Add to cart</button>
 				</div>
 				<Product title={$cartStore.title} price={$cartStore.price} id={$cartStore.id} {data} />

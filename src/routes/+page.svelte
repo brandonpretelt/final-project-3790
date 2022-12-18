@@ -3,6 +3,7 @@
 	import { users } from '$lib/stores/users';
 	import { enhance } from '$app/forms';
 	import { goto } from '$app/navigation';
+	import { blur } from 'svelte/transition';
 	// import { setContext } from 'svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	export let data;
@@ -18,7 +19,7 @@
 
 <Header title={'GroceryGo'} photoData={data} />
 
-<div class="hero min-h-screen bg-orange-200">
+<div class="hero min-h-screen bg-orange-200" transition:blur>
 	<div class="text-center">
 		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 		<div class="max-w p-10 m-5 rounded-lg bg-orange-100">

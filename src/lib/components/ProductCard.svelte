@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+
 	export let data;
 	let visible = false;
 	onMount(() => {
@@ -9,10 +10,10 @@
 </script>
 
 {#if visible}
-	<section class="min-h-screen" transition:fade>
+	<section class="min-h-screen" in:fly={{ x: -500 }}>
 		<div class="card card-body grid grid-cols-4">
 			{#if data}
-				{#each data.products as { title, image, id }}
+				{#each data.products as { title, image, id } (id)}
 					<div class="rounded-lg card-content bg-slate-700">
 						<!-- svelte-ignore a11y-missing-attribute -->
 						<figure class="p-3 w-full">

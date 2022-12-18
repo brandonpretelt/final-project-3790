@@ -14,7 +14,7 @@
 	if (photoData) {
 		randomProfilePhoto = photoData[0];
 	}
-	console.log(randomProfilePhoto);
+	// console.log(randomProfilePhoto);
 	function show() {
 		if (hidden === false) hidden;
 
